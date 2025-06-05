@@ -1,0 +1,118 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #ddf0f7;
+    min-height: 100vh;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+
+}
+
+.header {
+  background: linear-gradient(
+    to bottom,
+    #4e7d8d,
+    #7ca7b9,
+    #5e8d9e,
+    #4e7d8d
+  );
+    padding: 2px 20px;
+    border-radius: 10px ;
+}
+
+.header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.profile-content {
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.profile-photo img {
+    width: 280px;
+    height: 350px;
+    border: 2px solid #a8c8d8;
+    object-fit: cover;
+    background-color: #87ceeb;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 6px;
+    align-items: flex-start;
+}
+
+.label {
+    width: 280px;
+    font-weight: 500;
+    color: #666;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.value {
+    flex: 1;
+    color: #333;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.family-info {
+    padding: 0 20px 20px;
+}
+
+.family-info h2 {
+    background-color: transparent;
+    padding: 10px 0 5px 0;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px dotted #999;
+    border-left: none;
+}
+
+.family-section {
+    margin-bottom: 25px;
+    padding-left: 0;
+}
+
+.family-section .label {
+    width: 120px;
+    font-weight: 500;
+    color: #666;
+}
+
+.family-section .value {
+    font-weight: 700;
+    color: #333;
+}
