@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration - Universitas Klabat</title>
+  <link rel="stylesheet" href="asset/css/style_registration.css">
+</head>
+<body>
+  <div class="registration-container">
+    <header class="reg-header">
+      <h1>Student Registration</h1>
+      <p>Universitas Klabat - Pathway to Excellence</p>
+    </header>
+
+    <form action="profile.html" method="post" class="registration-form">
+      <div class="form-group">
+        <label for="nim">Registration Number / NIM</label>
+        <input type="text" id="nim" name="nim" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Full Name (Sesuai Ijazah)</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="program">Program</label>
+        <select id="program" name="program" required>
+          <option value="normal">Normal Program</option>
+          <option value="special">Special Program</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="birthplace">Place of Birth</label>
+        <input type="text" id="birthplace" name="birthplace" required>
+      </div>
+
+      <div class="form-group">
+        <label for="birthdate">Date of Birth</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="religion">Religion</label>
+        <input type="text" id="religion" name="religion">
+      </div>
+
+      <div class="form-group">
+        <label for="residence">Residence</label>
+        <input type="text" id="residence" name="residence">
+      </div>
+
+      <div class="form-group">
+        <label for="status">Marital Status</label>
+        <select id="status" name="status">
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="faculty">Faculty</label>
+        <input type="text" id="faculty" name="faculty">
+      </div>
+
+      <div class="form-group">
+        <label for="prodi">Program Study / Minor</label>
+        <input type="text" id="prodi" name="prodi">
+      </div>
+
+      <div class="form-group">
+        <label for="curriculum">Curriculum Name</label>
+        <input type="text" id="curriculum" name="curriculum">
+      </div>
+
+      <div class="form-group">
+        <label for="address">Full Address</label>
+        <textarea id="address" name="address" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="mother">Mother's Name</label>
+        <input type="text" id="mother" name="mother">
+      </div>
+
+      <div class="form-group">
+        <label for="mother_address">Mother's Address</label>
+        <input type="text" id="mother_address" name="mother_address">
+      </div>
+
+      <div class="form-group">
+        <label for="father">Father's Name</label>
+        <input type="text" id="father" name="father">
+      </div>
+
+      <div class="form-group">
+        <label for="father_address">Father's Address</label>
+        <input type="text" id="father_address" name="father_address">
+      </div>
+
+      <div class="form-group">
+        <label for="guardian">Guardian's Name</label>
+        <input type="text" id="guardian" name="guardian">
+      </div>
+
+      <div class="form-group">
+        <label for="guardian_address">Guardian's Address</label>
+        <input type="text" id="guardian_address" name="guardian_address">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Create Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-group checkbox">
+        <label><input type="checkbox" required> I declare all the data provided is accurate.</label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
