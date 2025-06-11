@@ -76,6 +76,8 @@ body {
   margin-top: 30px;
 }
 
+/*try bootstrap for button
+
 .registration-form button[type="submit"] {
   background-color: #0056A4;
   color: #FFFFFF;
@@ -86,6 +88,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 
 .registration-form button[type="submit"]:hover {
   background-color: #003f7f;

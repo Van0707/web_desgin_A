@@ -11,18 +11,22 @@
             <img src="asset/images/login.jpg" alt="Universitas Klabat Logo" class="logo">
             <h1>UNIVERSITAS KLABAT</h1>
             <p class="tagline">Pathway to Excellence</p>
-            <form action="profile.html" method="post" >
+            <form action="profile.html" method="get">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username"">
+                <input type="text" id="username" name="username" required>
                 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" required>
                 
                 <div class="button-group">
                     <button type="submit" class="login-btn">Login</button>
-                    <button type="reset" class="reset-btn">Reset Session</button>
+                    <button type="reset" class="reset-btn">Reset</button>
                 </div>
             </form>
+
+        <div class="d-grid mt-3">
+            <a href="registration.html" class="registration-btn">Register</a>
+        </div>
         </div>
     </div>
 </body>
