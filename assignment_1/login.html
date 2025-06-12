@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Login - Universitas Klabat</title>
     <link rel="stylesheet" href="asset/css/style_Login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="login-container">
@@ -11,23 +12,63 @@
             <img src="asset/images/login.jpg" alt="Universitas Klabat Logo" class="logo">
             <h1>UNIVERSITAS KLABAT</h1>
             <p class="tagline">Pathway to Excellence</p>
-            <form action="profile.html" method="get">
+            
+            <!-- Form Login -->
+            <form id="loginForm">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
-                
+
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
-                
+
                 <div class="button-group">
                     <button type="submit" class="login-btn">Login</button>
                     <button type="reset" class="reset-btn">Reset</button>
                 </div>
             </form>
 
-        <div class="d-grid mt-3">
-            <a href="registration.html" class="registration-btn">Register</a>
-        </div>
+            <!-- Tombol Registrasi -->
+            <div class="d-grid mt-3">
+                <a href="registration.html" class="registration-btn">Register</a>
+            </div>
         </div>
     </div>
+
+    <!-- JavaScript Login Logic -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form submit langsung
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            const validUsername = "van";
+            const validPassword = "123";
+
+            if (username === validUsername && password === validPassword) {
+                Swal.fire({
+                    title: "Login Berhasil!",
+                    text: "Selamat datang di Universitas Klabat.",
+                    imageUrl: "https://unsplash.it/400/200",
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: "Custom image"
+                }).then(() => {
+                    // Redirect ke profile jika berhasil login
+                    window.location.href = "profile.html";
+                });
+            } else {
+                Swal.fire( {
+                    title: "Login Gagal!",
+                    text: "Username atau Password salah.",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Coba lagi"
+                });
+            }
+        });
+    </script>
 </body>
 </html>
