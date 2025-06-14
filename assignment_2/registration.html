@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Registration Form</title>
+    <link rel="stylesheet" href="../bootstrap@5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/assignment_2/asset/css/styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header Section -->
+        <header class="header-section">
+            <div class="container">
+                <div class="header-content text-center">
+                    <h1 class="display-2 fw-bold text-white mb-3">
+                        <i class="fas fa-graduation-cap text-warning me-3"></i>UNKLAB
+                    </h1>
+                    <p class="lead fs-4 text-white-50">Registration Form for New Student</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <div class="container-fluid px-4">
+                <form id="registrationForm" novalidate>
+                    <!-- Personal Information Section -->
+                    <div class="section-card card border-0 shadow-lg mb-4">
+                        <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control form-control-lg" id="regNumber" placeholder="Enter registration number" required>
+                                        <label for="regNumber">Registration Number <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid registration number.
+                                        </div>
+                                    </div>
+                                </div>
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="section-title card-title mb-4">
+                                <i class="fas fa-user text-warning me-3"></i>
+                                Personal Information
+                            </h3>
+                            
+                            <div class="row g-3">
+                            
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control form-control-lg" id="fullName" placeholder="Enter your full name" required>
+                                        <label for="fullName">Full Name <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please provide your full name.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-lg-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="birthplace" placeholder="City of birth" required>
+                                        <label for="birthplace">Birthplace <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please provide your birthplace.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="date" class="form-control" id="birthdate" required>
+                                        <label for="birthdate">Date of Birth <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please provide your date of birth.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="gender" required>
+                                            <option value="">Select Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                        <label for="gender">Gender <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please select your gender.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold mb-3">Blood Type</label>
+                                <div class="blood-type-grid">
+                                    <div class="form-check blood-type-option">
+                                        <input type="radio" name="bloodType" id="bloodA" value="A" class="form-check-input">
+                                        <label class="form-check-label blood-type-label" for="bloodA">A</label>
+                                    </div>
+                                    <div class="form-check blood-type-option">
+                                        <input type="radio" name="bloodType" id="bloodB" value="B" class="form-check-input">
+                                        <label class="form-check-label blood-type-label" for="bloodB">B</label>
+                                    </div>
+                                    <div class="form-check blood-type-option">
+                                        <input type="radio" name="bloodType" id="bloodAB" value="AB" class="form-check-input">
+                                        <label class="form-check-label blood-type-label" for="bloodAB">AB</label>
+                                    </div>
+                                    <div class="form-check blood-type-option">
+                                        <input type="radio" name="bloodType" id="bloodO" value="O" class="form-check-input">
+                                        <label class="form-check-label blood-type-label" for="bloodO">O</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="title" placeholder="Title (optional)">
+                                        <label for="title">Title</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-envelope text-primary"></i>
+                                        </span>
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="your.email@example.com" required>
+                                            <label for="email">Email <span class="text-danger">*</span></label>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid email address.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-phone text-primary"></i>
+                                        </span>
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" id="telephone" placeholder="+62 xxx xxxx xxxx" required>
+                                            <label for="telephone">Telephone Number <span class="text-danger">*</span></label>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid telephone number.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-mobile-alt text-primary"></i>
+                                        </span>
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" id="mobile" placeholder="+62 xxx xxxx xxxx" required>
+                                            <label for="mobile">Mobile Number <span class="text-danger">*</span></label>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid mobile number.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="status">
+                                            <option value="">Select Status</option>
+                                            <option value="single">Single</option>
+                                            <option value="married">Married</option>
+                                        </select>
+                                        <label for="status">Marital Status</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="religion" required>
+                                            <option value="">Select Religion</option>
+                                            <option value="christian">seventh day adventist</option>
+                                            <option value="christian">Protestant</option>
+                                            <option value="catholic">Catholic</option>
+                                            <option value="islam">Islam</option>
+                                            <option value="hindu">Hindu</option>
+                                            <option value="buddha">Buddha</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <label for="religion">Religion <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please select your religion.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="homeAddress" style="height: 100px" placeholder="Enter your complete home address" required></textarea>
+                                <label for="homeAddress">Home Address <span class="text-danger">*</span></label>
+                                <div class="invalid-feedback">
+                                    Please provide your home address.
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="postalCode" placeholder="Postal code">
+                                <label for="postalCode">Postal Code</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- School Information Section -->
+                    <div class="section-card card border-0 shadow-lg mb-4">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="section-title card-title mb-4">
+                                <i class="fas fa-school text-warning me-3"></i>
+                                School Information
+                            </h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="schoolName" placeholder="Name of your high school" required>
+                                        <label for="schoolName">High School Name <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please provide your high school name.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="program" required>
+                                            <option value="">Select Program</option>
+                                            <option value="ipa">IPA (Science)</option>
+                                            <option value="ips">IPS (Social)</option>
+                                            <option value="bahasa">Language</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <label for="program">Program <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please select your program.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-light">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </span>
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="schoolPhone" placeholder="School telephone number">
+                                    <label for="schoolPhone">School Telephone Number</label>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="schoolAddress" style="height: 100px" placeholder="Enter school address"></textarea>
+                                <label for="schoolAddress">School Address</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="schoolPostal" placeholder="School postal code">
+                                <label for="schoolPostal">School Postal Code</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parent's Information Section -->
+                    <div class="section-card card border-0 shadow-lg mb-4">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="section-title card-title mb-4">
+                                <i class="fas fa-users text-warning me-3"></i>
+                                Parent's Information
+                            </h3>
+                            
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="card h-100 border-primary border-2 border-opacity-25">
+                                        <div class="card-header bg-primary bg-opacity-10 py-3">
+                                            <h5 class="text-primary mb-0 fw-bold">
+                                                <i class="fas fa-male me-2"></i>Father's Information
+                                            </h5>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="fatherName" placeholder="Father's full name" required>
+                                                <label for="fatherName">Father's Name <span class="text-danger">*</span></label>
+                                                <div class="invalid-feedback">
+                                                    Please provide father's name.
+                                                </div>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text bg-light">
+                                                    <i class="fas fa-mobile-alt text-primary"></i>
+                                                </span>
+                                                <div class="form-floating">
+                                                    <input type="tel" class="form-control" id="fatherMobile" placeholder="Father's mobile number">
+                                                    <label for="fatherMobile">Mobile Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="fatherEducation">
+                                                    <option value="">Select Education Level</option>
+                                                    <option value="elementary">Elementary</option>
+                                                    <option value="junior-high">Junior High</option>
+                                                    <option value="senior-high">Senior High</option>
+                                                    <option value="diploma">Diploma</option>
+                                                    <option value="bachelor">Bachelor</option>
+                                                    <option value="master">Master</option>
+                                                    <option value="doctor">Doctor</option>
+                                                </select>
+                                                <label for="fatherEducation">Education</label>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text bg-light">
+                                                    <i class="fas fa-envelope text-primary"></i>
+                                                </span>
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="fatherEmail" placeholder="Father's email">
+                                                    <label for="fatherEmail">Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="fatherReligion">
+                                                    <option value="">Select Religion</option>
+                                                    <option value="christian">seventh day adventist</option>
+                                                    <option value="christian">Protestant</option>
+                                                    <option value="catholic">Catholic</option>
+                                                    <option value="islam">Islam</option>
+                                                    <option value="hindu">Hindu</option>
+                                                    <option value="buddha">Buddha</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                                <label for="fatherReligion">Religion</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card h-100 border-success border-2 border-opacity-25">
+                                        <div class="card-header bg-success bg-opacity-10 py-3">
+                                            <h5 class="text-success mb-0 fw-bold">
+                                                <i class="fas fa-female me-2"></i>Mother's Information
+                                            </h5>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="motherName" placeholder="Mother's full name" required>
+                                                <label for="motherName">Mother's Name <span class="text-danger">*</span></label>
+                                                <div class="invalid-feedback">
+                                                    Please provide mother's name.
+                                                </div>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text bg-light">
+                                                    <i class="fas fa-mobile-alt text-success"></i>
+                                                </span>
+                                                <div class="form-floating">
+                                                    <input type="tel" class="form-control" id="motherMobile" placeholder="Mother's mobile number">
+                                                    <label for="motherMobile">Mobile Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="motherEducation">
+                                                    <option value="">Select Education Level</option>
+                                                    <option value="elementary">Elementary</option>
+                                                    <option value="junior-high">Junior High</option>
+                                                    <option value="senior-high">Senior High</option>
+                                                    <option value="diploma">Diploma</option>
+                                                    <option value="bachelor">Bachelor</option>
+                                                    <option value="master">Master</option>
+                                                    <option value="doctor">Doctor</option>
+                                                </select>
+                                                <label for="motherEducation">Education</label>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text bg-light">
+                                                    <i class="fas fa-envelope text-success"></i>
+                                                </span>
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="motherEmail" placeholder="Mother's email">
+                                                    <label for="motherEmail">Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="motherReligion">
+                                                    <option value="">Select Religion</option>
+                                                    <option value="christian">seventh day adventist</option>
+                                                    <option value="christian">Protestant</option>
+                                                    <option value="catholic">Catholic</option>
+                                                    <option value="islam">Islam</option>
+                                                    <option value="hindu">Hindu</option>
+                                                    <option value="buddha">Buddha</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                                <label for="motherReligion">Religion</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guardian Information Section -->
+                    <div class="section-card card border-0 shadow-lg mb-4">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="section-title card-title mb-4">
+                                <i class="fas fa-user-shield text-warning me-3"></i>
+                                Parent/Guardian Information
+                            </h3>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="guardianName" placeholder="Guardian's full name" required>
+                                        <label for="guardianName">Full Name <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please provide guardian's name.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="guardianRelation" required>
+                                            <option value="">Select Relation</option>
+                                            <option value="father">Father</option>
+                                            <option value="mother">Mother</option>
+                                            <option value="guardian">Guardian</option>
+                                            <option value="relative">Relative</option>
+                                        </select>
+                                        <label for="guardianRelation">Family Relation <span class="text-danger">*</span></label>
+                                        <div class="invalid-feedback">
+                                            Please select the family relation.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-envelope text-primary"></i>
+                                        </span>
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="guardianEmail" placeholder="Guardian's email">
+                                            <label for="guardianEmail">Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-phone text-primary"></i>
+                                        </span>
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" id="guardianPhone" placeholder="Guardian's phone number">
+                                            <label for="guardianPhone">Home/Phone Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-mobile-alt text-primary"></i>
+                                        </span>
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" id="guardianMobile" placeholder="Guardian's mobile number">
+                                            <label for="guardianMobile">Mobile Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="guardianEducation">
+                                            <option value="">Select Education Level</option>
+                                            <option value="elementary">Elementary</option>
+                                            <option value="junior-high">Junior High</option>
+                                            <option value="senior-high">Senior High</option>
+                                            <option value="diploma">Diploma</option>
+                                            <option value="bachelor">Bachelor</option>
+                                            <option value="master">Master</option>
+                                            <option value="doctor">Doctor</option>
+                                        </select>
+                                        <label for="guardianEducation">Education</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="guardianReligion">
+                                    <option value="">Select Religion</option>
+                                    <option value="christian">seventh day adventist</option>
+                                    <option value="christian">Protestant</option>
+                                    <option value="catholic">Catholic</option>
+                                    <option value="islam">Islam</option>
+                                    <option value="hindu">Hindu</option>
+                                    <option value="buddha">Buddha</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label for="guardianReligion">Religion</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="card border-warning border-2 mb-4">
+                        <div class="card-body p-4">
+                            <div class="form-check">
+                                <input class="form-check-input form-check-input-lg" type="checkbox" id="agreeTerms" required>
+                                <label class="form-check-label fw-semibold" for="agreeTerms">
+                                    <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                                    I hereby state that all information on this New Student Registration Form are complete and true.<br>
+                                    <small class="text-muted">All reports on this form I submitted to Universitas Klabat and Universitas Klabat do not oblige to return it.</small>
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input type="date" class="form-control" id="formDate" value="2025-06-17">
+                        <label for="formDate">Airmadidi</label>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-grid gap-3 d-md-flex justify-content-md-center mb-5">
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-5" onclick="printForm()">
+                            <i class="fas fa-print me-2"></i>Print Form
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                            <i class="fas fa-paper-plane me-2"></i>Register Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Print form function
+        function printForm() {
+            window.print();
+        }
+
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
