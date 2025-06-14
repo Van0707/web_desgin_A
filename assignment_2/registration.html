@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <!-- Meta tags for proper document structure and mobile responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNKLAB Registration Form</title>
+    
+    <!-- External CSS Dependencies -->
+    <!-- Bootstrap CSS for responsive grid system and components -->
     <link rel="stylesheet" href="../bootstrap@5.3.3/css/bootstrap.min.css">
+    <!-- Font Awesome for icons throughout the form -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS for additional styling -->
     <link rel="stylesheet" href="/assignment_2/asset/css/styles.css">
 </head>
 <body>
+    <!-- Main container that wraps the entire page content -->
     <div class="main-container">
-        <!-- Header Section -->
+        
+        <!-- Header Section with university branding -->
         <header class="header-section">
             <div class="container">
                 <div class="header-content text-center">
+                    <!-- Main heading with graduation cap icon and university name -->
                     <h1 class="display-2 fw-bold text-white mb-3">
                         <i class="fas fa-graduation-cap text-warning me-3"></i>UNKLAB
                     </h1>
+                    <!-- Subtitle describing the form purpose -->
                     <p class="lead fs-4 text-white-50">Registration Form for New Student</p>
                 </div>
             </div>
         </header>
 
-        <!-- Form Container -->
+        <!-- Main form container with fluid layout -->
         <div class="form-container">
             <div class="container-fluid px-4">
+                <!-- Registration form with Bootstrap validation -->
                 <form id="registrationForm" novalidate>
-                    <!-- Personal Information Section -->
+                    
+                    <!-- PERSONAL INFORMATION SECTION -->
                     <div class="section-card card border-0 shadow-lg mb-4">
+                        <!-- Registration Number field (appears to be misplaced - should be in card body) -->
                         <div class="col-md-6">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-control-lg" id="regNumber" placeholder="Enter registration number" required>
-                                        <label for="regNumber">Registration Number <span class="text-danger">*</span></label>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid registration number.
-                                        </div>
-                                    </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-control-lg" id="regNumber" placeholder="Enter registration number" required>
+                                <label for="regNumber">Registration Number <span class="text-danger">*</span></label>
+                                <div class="invalid-feedback">
+                                    Please provide a valid registration number.
                                 </div>
+                            </div>
+                        </div>
+                        
                         <div class="card-body p-4 p-md-5">
+                            <!-- Section title with user icon -->
                             <h3 class="section-title card-title mb-4">
                                 <i class="fas fa-user text-warning me-3"></i>
                                 Personal Information
                             </h3>
                             
+                            <!-- Full Name field -->
                             <div class="row g-3">
-                            
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control form-control-lg" id="fullName" placeholder="Enter your full name" required>
@@ -56,6 +71,7 @@
                                 </div>
                             </div>
 
+                            <!-- Birth information row: birthplace, date, and gender -->
                             <div class="row g-3">
                                 <div class="col-lg-4">
                                     <div class="form-floating mb-3">
@@ -90,9 +106,11 @@
                                 </div>
                             </div>
 
+                            <!-- Blood Type selection using radio buttons in a grid layout -->
                             <div class="mb-4">
                                 <label class="form-label fw-semibold mb-3">Blood Type</label>
                                 <div class="blood-type-grid">
+                                    <!-- Each blood type option as a radio button -->
                                     <div class="form-check blood-type-option">
                                         <input type="radio" name="bloodType" id="bloodA" value="A" class="form-check-input">
                                         <label class="form-check-label blood-type-label" for="bloodA">A</label>
@@ -112,14 +130,17 @@
                                 </div>
                             </div>
 
+                            <!-- Title and Email row -->
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <!-- Optional title field -->
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="title" placeholder="Title (optional)">
                                         <label for="title">Title</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Email field with envelope icon -->
                                     <div class="input-group mb-3">
                                         <span class="input-group-text bg-light">
                                             <i class="fas fa-envelope text-primary"></i>
@@ -135,8 +156,10 @@
                                 </div>
                             </div>
 
+                            <!-- Phone numbers row: telephone and mobile -->
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <!-- Telephone number with phone icon -->
                                     <div class="input-group mb-3">
                                         <span class="input-group-text bg-light">
                                             <i class="fas fa-phone text-primary"></i>
@@ -151,6 +174,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Mobile number with mobile icon -->
                                     <div class="input-group mb-3">
                                         <span class="input-group-text bg-light">
                                             <i class="fas fa-mobile-alt text-primary"></i>
@@ -166,8 +190,10 @@
                                 </div>
                             </div>
 
+                            <!-- Marital status and religion row -->
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <!-- Marital status dropdown -->
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="status">
                                             <option value="">Select Status</option>
@@ -178,6 +204,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Religion dropdown with various options -->
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="religion" required>
                                             <option value="">Select Religion</option>
@@ -197,6 +224,7 @@
                                 </div>
                             </div>
 
+                            <!-- Home address textarea -->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="homeAddress" style="height: 100px" placeholder="Enter your complete home address" required></textarea>
                                 <label for="homeAddress">Home Address <span class="text-danger">*</span></label>
@@ -205,6 +233,7 @@
                                 </div>
                             </div>
 
+                            <!-- Postal code field -->
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="postalCode" placeholder="Postal code">
                                 <label for="postalCode">Postal Code</label>
@@ -212,16 +241,19 @@
                         </div>
                     </div>
 
-                    <!-- School Information Section -->
+                    <!-- SCHOOL INFORMATION SECTION -->
                     <div class="section-card card border-0 shadow-lg mb-4">
                         <div class="card-body p-4 p-md-5">
+                            <!-- Section title with school icon -->
                             <h3 class="section-title card-title mb-4">
                                 <i class="fas fa-school text-warning me-3"></i>
                                 School Information
                             </h3>
                             
+                            <!-- School name and program row -->
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <!-- High school name field -->
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="schoolName" placeholder="Name of your high school" required>
                                         <label for="schoolName">High School Name <span class="text-danger">*</span></label>
@@ -231,6 +263,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Academic program dropdown -->
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="program" required>
                                             <option value="">Select Program</option>
@@ -247,6 +280,7 @@
                                 </div>
                             </div>
 
+                            <!-- School telephone number with phone icon -->
                             <div class="input-group mb-3">
                                 <span class="input-group-text bg-light">
                                     <i class="fas fa-phone text-primary"></i>
@@ -257,11 +291,13 @@
                                 </div>
                             </div>
 
+                            <!-- School address textarea -->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="schoolAddress" style="height: 100px" placeholder="Enter school address"></textarea>
                                 <label for="schoolAddress">School Address</label>
                             </div>
 
+                            <!-- School postal code -->
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="schoolPostal" placeholder="School postal code">
                                 <label for="schoolPostal">School Postal Code</label>
@@ -269,23 +305,28 @@
                         </div>
                     </div>
 
-                    <!-- Parent's Information Section -->
+                    <!-- PARENT'S INFORMATION SECTION -->
                     <div class="section-card card border-0 shadow-lg mb-4">
                         <div class="card-body p-4 p-md-5">
+                            <!-- Section title with users icon -->
                             <h3 class="section-title card-title mb-4">
                                 <i class="fas fa-users text-warning me-3"></i>
                                 Parent's Information
                             </h3>
                             
+                            <!-- Two-column layout for father and mother information -->
                             <div class="row g-4">
+                                <!-- Father's Information Card -->
                                 <div class="col-lg-6">
                                     <div class="card h-100 border-primary border-2 border-opacity-25">
+                                        <!-- Card header with father icon -->
                                         <div class="card-header bg-primary bg-opacity-10 py-3">
                                             <h5 class="text-primary mb-0 fw-bold">
                                                 <i class="fas fa-male me-2"></i>Father's Information
                                             </h5>
                                         </div>
                                         <div class="card-body p-4">
+                                            <!-- Father's name -->
                                             <div class="form-floating mb-3">
                                                 <input type="text" class="form-control" id="fatherName" placeholder="Father's full name" required>
                                                 <label for="fatherName">Father's Name <span class="text-danger">*</span></label>
@@ -293,6 +334,7 @@
                                                     Please provide father's name.
                                                 </div>
                                             </div>
+                                            <!-- Father's mobile number -->
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-light">
                                                     <i class="fas fa-mobile-alt text-primary"></i>
@@ -302,6 +344,7 @@
                                                     <label for="fatherMobile">Mobile Number</label>
                                                 </div>
                                             </div>
+                                            <!-- Father's education level -->
                                             <div class="form-floating mb-3">
                                                 <select class="form-select" id="fatherEducation">
                                                     <option value="">Select Education Level</option>
@@ -315,6 +358,7 @@
                                                 </select>
                                                 <label for="fatherEducation">Education</label>
                                             </div>
+                                            <!-- Father's email -->
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-light">
                                                     <i class="fas fa-envelope text-primary"></i>
@@ -324,6 +368,7 @@
                                                     <label for="fatherEmail">Email</label>
                                                 </div>
                                             </div>
+                                            <!-- Father's religion -->
                                             <div class="form-floating mb-3">
                                                 <select class="form-select" id="fatherReligion">
                                                     <option value="">Select Religion</option>
@@ -340,14 +385,18 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <!-- Mother's Information Card -->
                                 <div class="col-lg-6">
                                     <div class="card h-100 border-success border-2 border-opacity-25">
+                                        <!-- Card header with mother icon -->
                                         <div class="card-header bg-success bg-opacity-10 py-3">
                                             <h5 class="text-success mb-0 fw-bold">
                                                 <i class="fas fa-female me-2"></i>Mother's Information
                                             </h5>
                                         </div>
                                         <div class="card-body p-4">
+                                            <!-- Mother's name -->
                                             <div class="form-floating mb-3">
                                                 <input type="text" class="form-control" id="motherName" placeholder="Mother's full name" required>
                                                 <label for="motherName">Mother's Name <span class="text-danger">*</span></label>
@@ -355,6 +404,7 @@
                                                     Please provide mother's name.
                                                 </div>
                                             </div>
+                                            <!-- Mother's mobile number -->
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-light">
                                                     <i class="fas fa-mobile-alt text-success"></i>
@@ -364,6 +414,7 @@
                                                     <label for="motherMobile">Mobile Number</label>
                                                 </div>
                                             </div>
+                                            <!-- Mother's education level -->
                                             <div class="form-floating mb-3">
                                                 <select class="form-select" id="motherEducation">
                                                     <option value="">Select Education Level</option>
@@ -377,6 +428,7 @@
                                                 </select>
                                                 <label for="motherEducation">Education</label>
                                             </div>
+                                            <!-- Mother's email -->
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-light">
                                                     <i class="fas fa-envelope text-success"></i>
@@ -386,6 +438,7 @@
                                                     <label for="motherEmail">Email</label>
                                                 </div>
                                             </div>
+                                            <!-- Mother's religion -->
                                             <div class="form-floating mb-3">
                                                 <select class="form-select" id="motherReligion">
                                                     <option value="">Select Religion</option>
@@ -406,16 +459,19 @@
                         </div>
                     </div>
 
-                    <!-- Guardian Information Section -->
+                    <!-- GUARDIAN INFORMATION SECTION -->
                     <div class="section-card card border-0 shadow-lg mb-4">
                         <div class="card-body p-4 p-md-5">
+                            <!-- Section title with shield icon -->
                             <h3 class="section-title card-title mb-4">
                                 <i class="fas fa-user-shield text-warning me-3"></i>
                                 Parent/Guardian Information
                             </h3>
                             
+                            <!-- Guardian name and relation row -->
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <!-- Guardian's full name -->
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="guardianName" placeholder="Guardian's full name" required>
                                         <label for="guardianName">Full Name <span class="text-danger">*</span></label>
@@ -425,6 +481,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Family relation dropdown -->
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="guardianRelation" required>
                                             <option value="">Select Relation</option>
@@ -441,8 +498,10 @@
                                 </div>
                             </div>
 
+                            <!-- Guardian email and phone row -->
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <!-- Guardian's email with envelope icon -->
                                     <div class="input-group mb-3">
                                         <span class="input-group-text bg-light">
                                             <i class="fas fa-envelope text-primary"></i>
@@ -454,6 +513,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Guardian's home/phone number -->
                                     <div class="input-group mb-3">
                                         <span class="input-group-text bg-light">
                                             <i class="fas fa-phone text-primary"></i>
@@ -466,8 +526,10 @@
                                 </div>
                             </div>
 
+                            <!-- Guardian mobile and education row -->
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <!-- Guardian's mobile number -->
                                     <div class="input-group mb-3">
                                         <span class="input-group-text bg-light">
                                             <i class="fas fa-mobile-alt text-primary"></i>
@@ -479,6 +541,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Guardian's education level -->
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="guardianEducation">
                                             <option value="">Select Education Level</option>
@@ -495,6 +558,7 @@
                                 </div>
                             </div>
 
+                            <!-- Guardian's religion -->
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="guardianReligion">
                                     <option value="">Select Religion</option>
@@ -511,9 +575,10 @@
                         </div>
                     </div>
 
-                    <!-- Terms and Conditions -->
+                    <!-- TERMS AND CONDITIONS SECTION -->
                     <div class="card border-warning border-2 mb-4">
                         <div class="card-body p-4">
+                            <!-- Agreement checkbox with warning styling -->
                             <div class="form-check">
                                 <input class="form-check-input form-check-input-lg" type="checkbox" id="agreeTerms" required>
                                 <label class="form-check-label fw-semibold" for="agreeTerms">
@@ -528,16 +593,19 @@
                         </div>
                     </div>
 
+                    <!-- Date field with location label (Airmadidi) -->
                     <div class="form-floating mb-4">
                         <input type="date" class="form-control" id="formDate" value="2025-06-17">
                         <label for="formDate">Airmadidi</label>
                     </div>
 
-                    <!-- Action Buttons -->
+                    <!-- ACTION BUTTONS SECTION -->
                     <div class="d-grid gap-3 d-md-flex justify-content-md-center mb-5">
+                        <!-- Print button - triggers browser print dialog -->
                         <button type="button" class="btn btn-outline-secondary btn-lg px-5" onclick="printForm()">
                             <i class="fas fa-print me-2"></i>Print Form
                         </button>
+                        <!-- Submit button - submits the form -->
                         <button type="submit" class="btn btn-primary btn-lg px-5">
                             <i class="fas fa-paper-plane me-2"></i>Register Now
                         </button>
@@ -548,14 +616,16 @@
     </div>
 
     <script>
-        // Print form function
+        // JavaScript function to print the form
+        // This opens the browser's print dialog when the Print Form button is clicked
         function printForm() {
             window.print();
         }
-
     </script>
 
-    <!-- Bootstrap JS Bundle -->
+    <!-- External JavaScript Dependencies -->
+    <!-- Bootstrap JavaScript Bundle - includes Popper.js for tooltips, popovers, and dropdowns -->
+    <!-- This enables Bootstrap's interactive components like modals, dropdowns, and form validation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
 </body>
