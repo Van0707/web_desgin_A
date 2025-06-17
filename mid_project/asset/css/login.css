@@ -1,0 +1,82 @@
+body {
+    background-color: #002b45;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 350px;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #6a1b9a;
+    margin: 5px 0;
+}
+
+.tagline {
+    font-style: italic;
+    color: #6a1b9a;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-btn,
+.reset-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.reset-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}

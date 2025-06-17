@@ -1,0 +1,93 @@
+/* style_registration.css */
+
+/* === Color Palette ===
+Primary Blue: #0056A4
+Accent Yellow: #FFD700
+Background White: #FFFFFF
+Text Dark: #333333
+*/
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+.registration-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid #0056A4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 86, 164, 0.15);
+}
+
+.reg-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.reg-header h1 {
+  color: #0056A4;
+  margin-bottom: 5px;
+}
+
+.reg-header p {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.registration-form .form-group {
+  margin-bottom: 20px;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #0056A4;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="password"],
+.registration-form input[type="date"],
+.registration-form select,
+.registration-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.registration-form textarea {
+  resize: vertical;
+}
+
+.registration-form .checkbox label {
+  font-weight: normal;
+  color: #333;
+}
+
+.registration-form .form-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.registration-form button[type="submit"] {
+  background-color: #0056A4;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.registration-form button[type="submit"]:hover {
+  background-color: #003f7f;
+}

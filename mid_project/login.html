@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login - Universitas Klabat</title>
-    <link rel="stylesheet" href="asset/css/style_Login.css">
+    <link rel="stylesheet" href="asset/css/Login.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -29,7 +29,7 @@
 
             <!-- Tombol Registrasi -->
             <div class="d-grid mt-3">
-                <a href="registration.html" class="registration-btn">Register</a>
+                <a href="register.html" class="registration-btn">Register</a>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
                     imageAlt: "Custom image"
                 }).then(() => {
                     // Redirect ke profile jika berhasil login
-                    window.location.href = "profile.html";
+                    window.location.href = "dashboard.html";
                 });
             } else {
                 Swal.fire( {
