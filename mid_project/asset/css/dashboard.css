@@ -7,14 +7,15 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ffffff 0%, #f9e4ff 100%);
+    background: url('../images/beck.jpg')center center fixed ;
+    background-size: cover;
     min-height: 100vh;
     color: #333;
 }
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    background: linear-gradient(to bottom, #12263c 0%, #357abd 100%);
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
