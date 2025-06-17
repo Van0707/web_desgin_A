@@ -505,8 +505,7 @@
                                     <div class="input-group mb-3">
                                         <span class="input-group-text bg-light">
                                             <i class="fas fa-envelope text-primary"></i>
-                                        </span>
-                                        <div class="form-floating">
+                                          <div class="form-floating">
                                             <input type="email" class="form-control" id="guardianEmail" placeholder="Guardian's email">
                                             <label for="guardianEmail">Email</label>
                                         </div>
@@ -600,15 +599,63 @@
                     </div>
 
                     <!-- ACTION BUTTONS SECTION -->
-                    <div class="d-grid gap-3 d-md-flex justify-content-md-center mb-5">
-                        <!-- Print button - triggers browser print dialog -->
-                        <button type="button" class="btn btn-outline-secondary btn-lg px-5" onclick="printForm()">
+                    <div class="container mt-5">
+                        <form id="registrationForm">
+                        <!-- ACTION BUTTONS SECTION -->
+                        <div class="d-grid gap-3 d-md-flex justify-content-md-center mb-5">
+                            <!-- Print button -->
+                            <button type="button" class="btn btn-outline-secondary btn-lg px-5" onclick="printForm()">
                             <i class="fas fa-print me-2"></i>Print Form
-                        </button>
-                        <!-- Submit button - submits the form -->
-                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                            </button>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
                             <i class="fas fa-paper-plane me-2"></i>Register Now
-                        </button>
+                            </button>
+                        </div>
+                        </form>
+
+                        <!-- Hidden Card (Popout) -->
+                        <div id="confirmationCard" class="card text-center d-none">
+                        <div class="card-header">
+                            Pendaftaran Berhasil
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Terima kasih telah mendaftar!</h5>
+                            <p class="card-text">Formulir Anda telah berhasil dikirim.</p>
+                            <a href="#" class="btn btn-primary">Kembali ke Beranda</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Dikirim hari ini
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Bootstrap JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+                    <script>
+                        // Fungsi untuk print form
+                        function printForm() {
+                        window.print();
+                        }
+
+                        // Validasi dan tampilkan card jika valid
+                        const form = document.getElementById('registrationForm');
+                        const confirmationCard = document.getElementById('confirmationCard');
+
+                        form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            event.preventDefault(); // Mencegah reload
+                            confirmationCard.classList.remove('d-none');
+                        }
+
+                        form.classList.add('was-validated');
+                        });
+                    </script>
                     </div>
                 </form>
             </div>
@@ -627,6 +674,7 @@
     <!-- Bootstrap JavaScript Bundle - includes Popper.js for tooltips, popovers, and dropdowns -->
     <!-- This enables Bootstrap's interactive components like modals, dropdowns, and form validation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    
 
 </body>
 </html>
