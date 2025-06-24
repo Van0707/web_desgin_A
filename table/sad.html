@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Organization Info Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout Container */
+        .container {
+            display: flex;
+            margin-top: 60px;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: white;
+            padding: 2rem 1rem;
+            position: fixed;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            color: #666;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+            color: #2c3e50;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Organization Cards */
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .org-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .org-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .org-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .stat-item {
+            background: #3498db;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Campus Info Center</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#organizations">Organizations</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#academic">Academic Clubs</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#cultural">Cultural</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+                <li><a href="#professional">Professional</a></li>
+            </ul>
+
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#register">Register Club</a></li>
+                <li><a href="#join">Join Club</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#help">Help</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Section -->
+
+
+            <!-- Organizations List -->
+            <section class="content-section">
+                <h2 class="section-title">Featured Organizations</h2>
+                <div class="org-grid">
+                    <div class="org-card">
+                        <div class="org-name">Student Government</div>
+                        <div class="org-info">Student representation and campus initiatives<br>
+                        Meeting: Tuesdays 6PM, Room 201</div>
+                    </div>
+                    <div class="org-card">
+                        <div class="org-name">Computer Science Club</div>
+                        <div class="org-info">Programming workshops and tech events<br>
+                        Contact: cs.club@campus.edu</div>
+                    </div>
+                    <div class="org-card">
+                        <div class="org-name">Basketball Club</div>
+                        <div class="org-info">Recreational and competitive basketball<br>
+                        Practice: Mon/Wed 7PM, Gym</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Information Section -->
+            <section class="content-section">
+                <h2 class="section-title">How to Join</h2>
+                <p><strong>Step 1:</strong> Browse available organizations</p>
+                <p><strong>Step 2:</strong> Contact the organization directly</p>
+                <p><strong>Step 3:</strong> Attend a meeting or event</p>
+                <p><strong>Step 4:</strong> Complete membership requirements</p>
+                
+                <h3 style="margin-top: 2rem; color: #2c3e50;">Contact Information</h3>
+                <p>Student Life Office<br>
+                Main Building, Room 150<br>
+                Email: studentlife@campus.edu<br>
+                Phone: (555) 123-4567</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#help">Help</a>
+        </div>
+        <p>&copy; 2025 Campus Information Center</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+    background-color: #002b45;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 350px;
+}
+
+/* Style untuk label */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Style untuk input dan select */
+form input[type="text"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 2px solid #5e2a84; /* Sesuaikan dengan warna tema */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    color: #2c3e50;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form select:focus,
+form input:focus {
+    outline: none;
+    border-color: #9b59b6;
+    box-shadow: 0 0 5px rgba(155, 89, 182, 0.4);
+}
+
+/* Untuk menyamakan tampilan tombol dan dropdown */
+.login-btn, .reset-btn, .registration-btn {
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 480px) {
+    form select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #6a1b9a;
+    margin: 5px 0;
+}
+
+.tagline {
+    font-style: italic;
+    color: #6a1b9a;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-btn,
+.reset-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.reset-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}

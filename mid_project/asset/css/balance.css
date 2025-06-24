@@ -1,0 +1,332 @@
+/* Reset CSS dan pengaturan dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pengaturan body dan font dasar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container untuk membatasi lebar konten */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER STYLES ===== */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+/* Navigation styling */
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    padding: 2rem 0;
+    min-height: calc(100vh - 140px);
+}
+
+/* Layout untuk section */
+.balance-section,
+.calculator-section {
+    margin-bottom: 3rem;
+}
+
+/* ===== CARD STYLES ===== */
+.balance-card,
+.calculator-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.balance-card:hover,
+.calculator-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Header card styling */
+.card-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-header h2 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.card-header i {
+    font-size: 1.8rem;
+}
+
+/* Konten card */
+.card-content {
+    padding: 2rem;
+}
+
+
+/* ===== CALCULATOR SECTION STYLES ===== */
+.calculator-display {
+    margin-bottom: 1.5rem;
+}
+
+.calc-screen {
+    width: 100%;
+    height: 80px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: right;
+    padding: 0 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Calculator buttons grid */
+.calculator-buttons {
+    display: grid;
+    gap: 1rem;
+}
+
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+/* Calculator button base */
+.calc-btn {
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.calc-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Button variants untuk calculator */
+.btn-number {
+    background: black;
+    color: white;
+}
+
+.btn-operator {
+    background: white;
+    color: black;
+}
+
+.btn-equals {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    grid-row: span 2;
+}
+
+.btn-clear {
+    background: red;
+    color: white;
+}
+
+.btn-delete {
+    background: red;
+    color: #333;
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 1rem;
+    color: #666;
+    margin-top: auto;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    /* Header responsive */
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav {
+        gap: 1rem;
+    }
+    
+    /* Balance display responsive */
+    .balance-amount {
+        font-size: 2rem;
+    }
+    
+    /* Button group responsive */
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Calculator responsive */
+    .calc-screen {
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .calc-btn {
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    /* Container padding responsive */
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile specific adjustments */
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .balance-amount {
+        font-size: 1.8rem;
+    }
+    
+    .calc-btn {
+        height: 45px;
+        font-size: 0.9rem;
+    }
+    
+    .button-row {
+        gap: 0.3rem;
+    }
+    
+    .calculator-buttons {
+        gap: 0.5rem;
+    }
+}
+
+/* Scrollbar styling */
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animasi untuk efek visual */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.balance-card,
+.calculator-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.balance-card {
+    animation-delay: 0.2s;
+}
+
+.calculator-card {
+    animation-delay: 0.4s;
+}

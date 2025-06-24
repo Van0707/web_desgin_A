@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Meta tags untuk responsive design dan encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance & Calculator</title>
+    
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="/mid_project/asset/css/balance.css">
+    
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Header utama halaman -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <i class="fas fa-balance-scale"></i>
+                Balance Manager
+            </h1>
+        </div>
+    </header>
+
+            <!-- Bagian Calculator -->
+            <section id="calculator" class="calculator-section">
+                <div class="calculator-card">
+                    <!-- Header card calculator -->
+                    <div class="card-header">
+                        <h2>
+                            <i class="fas fa-calculator"></i>
+                            Kalkulator
+                        </h2>
+                    </div>
+                    
+                    <!-- Konten kalkulator -->
+                    <div class="card-content">
+                        <!-- Display hasil kalkulator -->
+                        <div class="calculator-display">
+                            <input type="text" 
+                                   id="calcDisplay" 
+                                   class="calc-screen" 
+                                   readonly 
+                                   value="0">
+                        </div>
+                        
+                        <!-- Tombol-tombol kalkulator -->
+                        <div class="calculator-buttons">
+                            <!-- Baris pertama: Clear, Delete, operasi -->
+                            <div class="button-row">
+                                <button class="calc-btn btn-clear" onclick="clearDisplay()">C</button>
+                                <button class="calc-btn btn-delete" onclick="deleteDigit()">⌫</button>
+                                <button class="calc-btn btn-operator" onclick="appendToDisplay('/')">/</button>
+                                <button class="calc-btn btn-operator" onclick="appendToDisplay('*')">×</button>
+                            </div>
+                            
+                            <!-- Baris kedua: Angka 7-9, minus -->
+                            <div class="button-row">
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('7')">7</button>
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('8')">8</button>
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('9')">9</button>
+                                <button class="calc-btn btn-operator" onclick="appendToDisplay('-')">-</button>
+                            </div>
+                            
+                            <!-- Baris ketiga: Angka 4-6, plus -->
+                            <div class="button-row">
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('4')">4</button>
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('5')">5</button>
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('6')">6</button>
+                                <button class="calc-btn btn-operator" onclick="appendToDisplay('+')">+</button>
+                            </div>
+                            
+                            <!-- Baris keempat: Angka 1-3, equals -->
+                            <div class="button-row">
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('1')">1</button>
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('2')">2</button>
+                                <button class="calc-btn btn-number" onclick="appendToDisplay('3')">3</button>
+                                <button class="calc-btn btn-equals" onclick="calculateResult()" rowspan="2">=</button>
+                            </div>
+                            
+                            <!-- Baris kelima: Zero, decimal point -->
+                            <div class="button-row">
+                                <button class="calc-btn btn-number btn-zero" onclick="appendToDisplay('0')">0</button>
+                                <button class="calc-btn btn-operator" onclick="appendToDisplay('.')">.</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer halaman -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Balance Manager. Made with ❤️</p>
+        </div>
+    </footer>
+
+
+<script>
+
+    // ===== FUNGSI UNTUK MENAMBAH KARAKTER KE DISPLAY =====
+    function appendToDisplay(value) {
+        if (calcDisplay.value === "0") {
+            calcDisplay.value = value;
+        } else {
+            calcDisplay.value += value;
+        }
+    }
+
+    // ===== FUNGSI UNTUK MEMBERSIHKAN DISPLAY =====
+    function clearDisplay() {
+        calcDisplay.value = "0";
+    }
+
+    // ===== FUNGSI UNTUK MENGHAPUS DIGIT TERAKHIR =====
+    function deleteDigit() {
+        if (calcDisplay.value.length > 1) {
+            calcDisplay.value = calcDisplay.value.slice(0, -1);
+        } else {
+            calcDisplay.value = "0";
+        }
+    }
+
+    // ===== FUNGSI UNTUK MENGHITUNG HASIL =====
+    function calculateResult() {
+        try {
+            // Mengambil isi display kalkulator dan mengevaluasi ekspresinya
+            const result = eval(calcDisplay.value);
+
+                // Menampilkan hasil ke layar kalkulator
+                calcDisplay.value = result;
+            // Menampilkan popup sukses menggunakan SweetAlert2
+                Swal.fire({
+                icon: 'success',               // Ikon sukses
+                title: 'Berhasil!',            // Judul popup
+                text: 'Hasil perhitungan: ' + result, // Menampilkan hasilnya
+                confirmButtonText: 'OK'        // Teks tombol
+            });
+
+        } catch (e) {
+                // Jika terjadi error dalam evaluasi (misalnya "2++"), tampilkan popup error
+                Swal.fire({
+                    icon: 'error',                 // Ikon error
+                    title: 'Terjadi Kesalahan!',   // Judul error
+                    text: 'Ekspresi tidak valid. Silakan periksa kembali input Anda.',
+                    confirmButtonText: 'OK'
+                });
+            }
+    }
+
+
+
+</script>
+<!--
+// ===== PENJELASAN TAMBAHAN =====
+
+
+ * CARA KERJA KALKULATOR:
+ * 
+ * 1. INISIALISASI:
+ *    - Variable calcDisplay menyimpan referensi ke elemen HTML input
+ *    - Display awal menunjukkan "0"
+ * 
+ * 2. INPUT ANGKA/OPERATOR:
+ *    - User klik tombol → memanggil appendToDisplay()
+ *    - Fungsi cek apakah display = "0", jika ya ganti dengan input baru
+ *    - Jika tidak, tambahkan input ke akhir string yang ada
+ * 
+ * 3. HAPUS INPUT:
+ *    - Clear (C): Reset semua ke "0"
+ *    - Delete (⌫): Hapus karakter terakhir, jika kosong set ke "0"
+ * 
+ * 4. HITUNG HASIL:
+ *    - eval() mengkonversi string matematika jadi hasil perhitungan
+ *    - Try-catch menangani error untuk mencegah crash aplikasi
+ * 
+ * CONTOH FLOW:
+ * - User input: 2 → display: "2"
+ * - User input: + → display: "2+"  
+ * - User input: 3 → display: "2+3"
+ * - User tekan = → eval("2+3") → display: "5"
+ */
+
+
+ * KEAMANAN DAN BEST PRACTICES:
+ * 
+ * RISIKO eval():
+ * - eval() bisa menjalankan kode JavaScript arbitrary
+ * - Dalam konteks kalkulator sederhana relatif aman
+ * - Untuk aplikasi production, lebih baik gunakan math parser library
+ * 
+ * ALTERNATIF LEBIH AMAN:
+ * - Gunakan Function constructor: new Function('return ' + expression)()
+ * - Atau library seperti math.js untuk parsing ekspresi matematika
+ * - Implementasi manual parser untuk operasi dasar
+ * 
+ * VALIDASI INPUT:
+ * - Bisa ditambah validasi untuk mencegah input karakter berbahaya
+ * - Whitelist hanya angka dan operator matematika dasar
+ * - Batasi panjang ekspresi untuk mencegah overflow
+-->
+
+
+</body>
+</html>
+
+

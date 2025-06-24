@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Admin Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .user-info {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        /* Layout Container */
+        .container {
+            display: flex;
+            margin-top: 60px;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: white;
+            padding: 2rem 1rem;
+            position: fixed;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+        }
+
+        .role-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .role-badge.staff {
+            background: #f39c12;
+        }
+
+        .sidebar h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            color: #666;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+            color: #2c3e50;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Dashboard Toggle */
+        .dashboard-toggle {
+            background: #34495e;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .toggle-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .toggle-btn.active {
+            background: #e74c3c;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .stat-item {
+            background: #3498db;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            min-width: 120px;
+        }
+
+        .stat-item.pending {
+            background: #f39c12;
+        }
+
+        .stat-item.rejected {
+            background: #e74c3c;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .data-table th {
+            background: #f8f9fa;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Action Buttons */
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-approve {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-reject {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-edit {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-view {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Status Badges */
+        .status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status.approved {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        textarea.form-control {
+            height: 100px;
+            resize: vertical;
+        }
+
+        /* Hidden sections */
+        .dashboard-section {
+            display: none;
+        }
+
+        .dashboard-section.active {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Campus Management Dashboard</div>
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#organizations">Organizations</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+            <div class="user-info">Welcome, John Admin | <a href="#logout" style="color: #bdc3c7;">Logout</a></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Dashboard Toggle -->
+        <div class="dashboard-toggle">
+            <h3>Select Dashboard View</h3>
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" onclick="showDashboard('admin')">Admin Dashboard</button>
+                <button class="toggle-btn" onclick="showDashboard('staff')">Organization Staff Dashboard</button>
+            </div>
+        </div>
+
+        <!-- ADMIN DASHBOARD -->
+        <div id="admin-dashboard" class="dashboard-section active">
+            <!-- Admin Sidebar -->
+            <aside class="sidebar">
+                <div class="role-badge">ADMIN</div>
+                
+                <h3>Management</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('admin-submissions')">Organization Submissions</a></li>
+                    <li><a href="#" onclick="showSection('admin-organizations')">Manage Organizations</a></li>
+                    <li><a href="#" onclick="showSection('admin-users')">Manage Users</a></li>
+                    <li><a href="#" onclick="showSection('admin-reports')">Reports</a></li>
+                </ul>
+
+                <h3>Settings</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('admin-settings')">System Settings</a></li>
+                    <li><a href="#" onclick="showSection('admin-permissions')">User Permissions</a></li>
+                    <li><a href="#" onclick="showSection('admin-notifications')">Notifications</a></li>
+                </ul>
+            </aside>
+
+            <!-- Admin Main Content -->
+            <main class="main-content">
+                <!-- Admin Overview -->
+                <section class="content-section" id="admin-overview">
+                    <h2 class="section-title">Admin Dashboard Overview</h2>
+                    <p>Manage campus organizations, review submissions, and oversee user accounts.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item pending">
+                            <span class="stat-number">5</span>
+                            <span>Pending Submissions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">48</span>
+                            <span>Active Organizations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1,250</span>
+                            <span>Total Users</span>
+                        </div>
+                        <div class="stat-item rejected">
+                            <span class="stat-number">3</span>
+                            <span>Issues Reported</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Organization Submissions -->
+                <section class="content-section" id="admin-submissions">
+                    <h2 class="section-title">Organization Submissions</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Organization Name</th>
+                                <th>Submitted By</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Robotics Club</td>
+                                <td>Sarah Johnson</td>
+                                <td>June 15, 2025</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="btn btn-view">View</button>
+                                    <button class="btn btn-approve">Approve</button>
+                                    <button class="btn btn-reject">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Photography Society</td>
+                                <td>Mike Chen</td>
+                                <td>June 12, 2025</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="btn btn-view">View</button>
+                                    <button class="btn btn-approve">Approve</button>
+                                    <button class="btn btn-reject">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chess Club</td>
+                                <td>David Smith</td>
+                                <td>June 10, 2025</td>
+                                <td><span class="status approved">Approved</span></td>
+                                <td>
+                                    <button class="btn btn-view">View</button>
+                                    <button class="btn btn-edit">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Manage Organizations -->
+                <section class="content-section" id="admin-organizations">
+                    <h2 class="section-title">Manage Organizations</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Organization</th>
+                                <th>Staff Contact</th>
+                                <th>Members</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Student Government</td>
+                                <td>admin@sg.campus.edu</td>
+                                <td>25</td>
+                                <td><span class="status approved">Active</span></td>
+                                <td>
+                                    <button class="btn btn-edit">Edit</button>
+                                    <button class="btn btn-view">View Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Computer Science Club</td>
+                                <td>president@cs.campus.edu</td>
+                                <td>85</td>
+                                <td><span class="status approved">Active</span></td>
+                                <td>
+                                    <button class="btn btn-edit">Edit</button>
+                                    <button class="btn btn-view">View Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Manage Users -->
+                <section class="content-section" id="admin-users">
+                    <h2 class="section-title">Manage Users</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Organizations</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>s.johnson@campus.edu</td>
+                                <td>Organization Staff</td>
+                                <td>Robotics Club</td>
+                                <td>
+                                    <button class="btn btn-edit">Edit</button>
+                                    <button class="btn btn-view">View Profile</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mike Chen</td>
+                                <td>m.chen@campus.edu</td>
+                                <td>Student</td>
+                                <td>CS Club, Drama Society</td>
+                                <td>
+                                    <button class="btn btn-edit">Edit</button>
+                                    <button class="btn btn-view">View Profile</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+
+        <!-- ORGANIZATION STAFF DASHBOARD -->
+        <div id="staff-dashboard" class="dashboard-section">
+            <!-- Staff Sidebar -->
+            <aside class="sidebar">
+                <div class="role-badge staff">STAFF</div>
+                
+                <h3>My Organization</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('staff-profile')">Organization Profile</a></li>
+                    <li><a href="#" onclick="showSection('staff-members')">Member Management</a></li>
+                    <li><a href="#" onclick="showSection('staff-requests')">Join Requests</a></li>
+                    <li><a href="#" onclick="showSection('staff-events')">Events</a></li>
+                </ul>
+
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('staff-announcements')">Announcements</a></li>
+                    <li><a href="#" onclick="showSection('staff-reports')">Reports</a></li>
+                    <li><a href="#" onclick="showSection('staff-settings')">Settings</a></li>
+                </ul>
+            </aside>
+
+            <!-- Staff Main Content -->
+            <main class="main-content">
+                <!-- Staff Overview -->
+                <section class="content-section" id="staff-overview">
+                    <h2 class="section-title">Computer Science Club Dashboard</h2>
+                    <p>Manage your organization profile, members, and join requests.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item pending">
+                            <span class="stat-number">8</span>
+                            <span>Pending Requests</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">85</span>
+                            <span>Active Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span>Upcoming Events</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Organization Profile -->
+                <section class="content-section" id="staff-profile">
+                    <h2 class="section-title">Organization Profile</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="org-name">Organization Name</label>
+                            <input type="text" id="org-name" class="form-control" value="Computer Science Club">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-description">Description</label>
+                            <textarea id="org-description" class="form-control">Programming workshops, hackathons, and tech career development for students interested in computer science.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="org-contact">Contact Email</label>
+                            <input type="email" id="org-contact" class="form-control" value="cs.club@campus.edu">
+                        </div>
+                        <div class="form-group">
+                            <label for="meeting-info">Meeting Information</label>
+                            <input type="text" id="meeting-info" class="form-control" value="Thursdays 7PM, Engineering Building Room 105">
+                        </div>
+                        <button type="submit" class="btn btn-edit">Save Changes</button>
+                    </form>
+                </section>
+
+                <!-- Member Management -->
+                <section class="content-section" id="staff-members">
+                    <h2 class="section-title">Member Management</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Join Date</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alex Rodriguez</td>
+                                <td>a.rodriguez@campus.edu</td>
+                                <td>Sep 2024</td>
+                                <td>President</td>
+                                <td>
+                                    <button class="btn btn-edit">Edit Role</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Emma Wilson</td>
+                                <td>e.wilson@campus.edu</td>
+                                <td>Jan 2025</td>
+                                <td>Member</td>
+                                <td>
+                                    <button class="btn btn-edit">Edit Role</button>
+                                    <button class="btn btn-reject">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Join Requests -->
+                <section class="content-section" id="staff-requests">
+                    <h2 class="section-title">Join Requests</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Request Date</th>
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Smith</td>
+                                <td>j.smith@campus.edu</td>
+                                <td>June 18, 2025</td>
+                                <td>Interested in web development</td>
+                                <td>
+                                    <button class="btn btn-approve">Accept</button>
+                                    <button class="btn btn-reject">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lisa Brown</td>
+                                <td>l.brown@campus.edu</td>
+                                <td>June 17, 2025</td>
+                                <td>Want to learn programming</td>
+                                <td>
+                                    <button class="btn btn-approve">Accept</button>
+                                    <button class="btn btn-reject">Reject</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#help">Help</a>
+        </div>
+        <p>&copy; 2025 Campus Management Dashboard</p>
+    </footer>
+
+    <script>
+        function showDashboard(type) {
+            // Hide all dashboards
+            document.getElementById('admin-dashboard').classList.remove('active');
+            document.getElementById('staff-dashboard').classList.remove('active');
+            
+            // Show selected dashboard
+            document.getElementById(type + '-dashboard').classList.add('active');
+            
+            // Update toggle buttons
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function showSection(sectionId) {
+            // This would handle section navigation within each dashboard
+            console.log('Navigate to:', sectionId);
+        }
+    </script>
+</body>
+</html>
