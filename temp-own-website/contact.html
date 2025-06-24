@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vertical Cafe</title>
+    <link rel="stylesheet" href="/own website/assets/css/contact.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Vertical Cafe</h1>
+                    <p>Rest • Relax • Revive</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with us or plan your visit</p>
+            </div>
+        </section>
+
+        <section class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Visit Us</h3>
+                        <p><strong>Address:</strong><br>
+                        18 West Buffalo Street<br>
+                        Warsaw, NY 14569</p>
+                        
+                        <p><strong>Phone:</strong><br>
+                        (585) 786-8181</p>
+                        
+                        <p><strong>Email:</strong><br>
+                        contact@cafevertical.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Hours</h3>
+                        <div class="hours-list">
+                            <div class="hour-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">7:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="hour-item">
+                                <span class="day">Saturday</span>
+                                <span class="time">8:00 AM - 2:00 PM</span>
+                            </div>
+                            <div class="hour-item">
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Location</h3>
+                        <p>We're conveniently located in downtown Warsaw, New York at the intersection of Route 20A and Route 19.</p>
+                        <p>Look for our welcoming storefront in the heart of the downtown area. Parking is available nearby.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reservation-section">
+            <div class="container">
+                <h2>Book the Gathering Room</h2>
+                <p>Reserve our conference room for meetings, parties, or private events.</p>
+                
+                <form class="reservation-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="duration">Duration (hours)</label>
+                            <select id="duration" name="duration">
+                                <option value="1">1 hour</option>
+                                <option value="2">2 hours</option>
+                                <option value="3">3 hours</option>
+                                <option value="4">4 hours</option>
+                                <option value="more">More than 4 hours</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" max="20">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type" name="event-type">
+                            <option value="">Select event type</option>
+                            <option value="business-meeting">Business Meeting</option>
+                            <option value="private-party">Private Party</option>
+                            <option value="study-group">Study Group</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your event, special requirements, or any questions you have..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Reservation Request</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p>Have a question or suggestion? We'd love to hear from you!</p>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Name *</label>
+                            <input type="text" id="contact-name" name="contact-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-message">Message *</label>
+                        <textarea id="contact-message" name="contact-message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="directions-section">
+            <div class="container">
+                <h2>Directions</h2>
+                <div class="directions-content">
+                    <div class="directions-text">
+                        <h3>How to Find Us</h3>
+                        <p><strong>From Rochester:</strong> Take Route 19 South for about 45 minutes. We're located right in downtown Warsaw at the intersection with Route 20A.</p>
+                        
+                        <p><strong>From Buffalo:</strong> Take Route 20A East through Arcade and continue to Warsaw. We're at the intersection of Route 20A and Route 19.</p>
+                        
+                        <p><strong>From Geneseo:</strong> Take Route 20A West directly to Warsaw. You'll find us at the crossroads with Route 19.</p>
+                        
+                        <p><strong>Parking:</strong> Street parking is available on Buffalo Street and nearby side streets. There's also a public parking lot just a block away.</p>
+                        
+                        <div class="landmarks">
+                            <h4>Nearby Landmarks:</h4>
+                            <ul>
+                                <li>Warsaw Village Hall</li>
+                                <li>Warsaw Central School</li>
+                                <li>Oatka Creek Park</li>
+                                <li>Warsaw Historical Society</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="map-placeholder">
+                        <div class="map-box">
+                            <h4>Interactive Map</h4>
+                            <p>18 West Buffalo Street<br>Warsaw, NY 14569</p>
+                            <p>Located at the intersection of<br>Route 20A & Route 19</p>
+                            <a href="https://maps.google.com/?q=18+West+Buffalo+Street+Warsaw+NY+14569" target="_blank" class="map-link">View on Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>Do you offer Wi-Fi?</h4>
+                        <p>Yes! We provide free Wi-Fi for all customers. Perfect for working, studying, or staying connected.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Can I bring my laptop?</h4>
+                        <p>Absolutely! We encourage customers to use our space for work or study. We have comfortable seating and power outlets available.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Do you cater events?</h4>
+                        <p>We can provide coffee and light refreshments for small events. Contact us to discuss your specific needs.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Is the Gathering Room always available?</h4>
+                        <p>The room is available when not booked for private events. We recommend calling ahead or making a reservation to ensure availability.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Do you sell gift cards?</h4>
+                        <p>Yes! Gift cards are available for purchase in-store and make great gifts for coffee lovers.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Can I buy your coffee beans to take home?</h4>
+                        <p>Absolutely! We sell our premium Brazilian Santos coffee beans by the bag. Available in all our roast varieties.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
